@@ -26,8 +26,3 @@ if __name__ == "__main__":
         port=int(os.getenv("PORT", 5000))
     )
 
-
-strategy:
-   matrix:
-     python-version:
-       -3.
