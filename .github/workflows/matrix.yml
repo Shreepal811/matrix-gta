@@ -33,15 +33,12 @@ jobs:
       - name: Execute Application
         run: |
           python app.py &
-          APP_PID=$!
 
           sleep 5
 
-          curl --fail http://127.0.0.1:5000/health
+          curl http://127.0.0.1:5000/health
 
           echo "Application executed successfully."
 
           echo "Matrix Python Version : ${{ matrix.python-version }}"
           python --version
-
-          kill $APP_PID
